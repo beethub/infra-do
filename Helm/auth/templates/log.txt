@@ -1,0 +1,373 @@
+2021-01-23 18:12:27,932 - bootstrapping - INFO - Figuring out my environment (Google? AWS? Openstack? Local?)
+2021-01-23 18:12:27,966 - bootstrapping - INFO - No meta-data available for this provider
+2021-01-23 18:12:27,967 - bootstrapping - INFO - Looks like your running unsupported
+2021-01-23 18:12:28,004 - bootstrapping - INFO - Configuring crontab
+2021-01-23 18:12:28,005 - bootstrapping - INFO - Skipping creation of renice cron job due to lack of SYS_NICE capability
+2021-01-23 18:12:28,016 - bootstrapping - INFO - Configuring pgqd
+2021-01-23 18:12:28,016 - bootstrapping - INFO - Configuring pam-oauth2
+2021-01-23 18:12:28,017 - bootstrapping - INFO - Writing to file /etc/pam.d/postgresql
+2021-01-23 18:12:28,017 - bootstrapping - INFO - Configuring standby-cluster
+2021-01-23 18:12:28,018 - bootstrapping - INFO - Configuring bootstrap
+2021-01-23 18:12:28,018 - bootstrapping - INFO - Configuring patroni
+2021-01-23 18:12:28,026 - bootstrapping - INFO - Writing to file /run/postgres.yml
+2021-01-23 18:12:28,027 - bootstrapping - INFO - Configuring log
+2021-01-23 18:12:28,027 - bootstrapping - INFO - Configuring pgbouncer
+2021-01-23 18:12:28,027 - bootstrapping - INFO - No PGBOUNCER_CONFIGURATION was specified, skipping
+2021-01-23 18:12:28,027 - bootstrapping - INFO - Configuring wal-e
+2021-01-23 18:12:28,028 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALE_S3_PREFIX
+2021-01-23 18:12:28,028 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALG_S3_PREFIX
+2021-01-23 18:12:28,028 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALE_S3_ENDPOINT
+2021-01-23 18:12:28,028 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/AWS_ENDPOINT
+2021-01-23 18:12:28,029 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/AWS_INSTANCE_PROFILE
+2021-01-23 18:12:28,029 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALG_DISABLE_S3_SSE
+2021-01-23 18:12:28,029 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALG_DOWNLOAD_CONCURRENCY
+2021-01-23 18:12:28,030 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALG_UPLOAD_CONCURRENCY
+2021-01-23 18:12:28,030 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/USE_WALG_RESTORE
+2021-01-23 18:12:28,030 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/WALE_LOG_DESTINATION
+2021-01-23 18:12:28,030 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/BACKUP_NUM_TO_RETAIN
+2021-01-23 18:12:28,031 - bootstrapping - INFO - Writing to file /run/etc/wal-e.d/env/TMPDIR
+2021-01-23 18:12:28,031 - bootstrapping - INFO - Configuring certificate
+2021-01-23 18:12:28,031 - bootstrapping - INFO - Generating ssl certificate
+2021-01-23 18:12:29,660 INFO: Selected new K8s API server endpoint https://104.131.79.77:443
+2021-01-23 18:12:29,686 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2021-01-23 18:12:29,691 INFO: Lock owner: None; I am acid-minimal-cluster-0
+2021-01-23 18:12:29,831 INFO: trying to bootstrap a new cluster
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /home/postgres/pgdata/pgroot/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/13/bin/pg_ctl -D /home/postgres/pgdata/pgroot/data -l logfile start
+
+2021-01-23 18:12:31 UTC [91]: [1-1] 600c670f.5b 0     LOG:  Auto detecting pg_stat_kcache.linux_hz parameter...
+2021-01-23 18:12:31 UTC [91]: [2-1] 600c670f.5b 0     LOG:  pg_stat_kcache.linux_hz is set to 166666
+2021-01-23 18:12:31,264 INFO: postmaster pid=91
+2021-01-23 18:12:31 UTC [91]: [3-1] 600c670f.5b 0     LOG:  redirecting log output to logging collector process
+2021-01-23 18:12:31 UTC [91]: [4-1] 600c670f.5b 0     HINT:  Future log output will appear in directory "../pg_log".
+/var/run/postgresql:5432 - rejecting connections
+/var/run/postgresql:5432 - accepting connections
+2021-01-23 18:12:31,330 INFO: establishing a new patroni connection to the postgres cluster
+2021-01-23 18:12:31,405 INFO: running post_bootstrap
+DO
+DO
+DO
+CREATE EXTENSION
+NOTICE:  version "1.0" of extension "pg_auth_mon" is already installed
+ALTER EXTENSION
+GRANT
+CREATE EXTENSION
+NOTICE:  version "1.3" of extension "pg_cron" is already installed
+ALTER EXTENSION
+ALTER POLICY
+REVOKE
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+GRANT
+REVOKE
+GRANT
+REVOKE
+GRANT
+GRANT
+CREATE EXTENSION
+DO
+CREATE TABLE
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+CREATE FOREIGN TABLE
+GRANT
+CREATE VIEW
+ALTER VIEW
+GRANT
+RESET
+SET
+NOTICE:  schema "zmon_utils" does not exist, skipping
+DROP SCHEMA
+DO
+NOTICE:  language "plpythonu" does not exist, skipping
+DROP LANGUAGE
+NOTICE:  function plpython_call_handler() does not exist, skipping
+DROP FUNCTION
+NOTICE:  function plpython_inline_handler(internal) does not exist, skipping
+DROP FUNCTION
+NOTICE:  function plpython_validator(oid) does not exist, skipping
+DROP FUNCTION
+CREATE SCHEMA
+GRANT
+SET
+CREATE TYPE
+CREATE FUNCTION
+CREATE FUNCTION
+GRANT
+You are now connected to database "postgres" as user "postgres".
+CREATE SCHEMA
+GRANT
+SET
+CREATE FUNCTION
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+GRANT
+RESET
+CREATE EXTENSION
+CREATE EXTENSION
+CREATE EXTENSION
+NOTICE:  version "2.0" of extension "set_user" is already installed
+ALTER EXTENSION
+GRANT
+GRANT
+CREATE SCHEMA
+GRANT
+GRANT
+SET
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+RESET
+You are now connected to database "template1" as user "postgres".
+CREATE SCHEMA
+GRANT
+SET
+CREATE FUNCTION
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+CREATE FUNCTION
+REVOKE
+GRANT
+COMMENT
+GRANT
+RESET
+CREATE EXTENSION
+CREATE EXTENSION
+CREATE EXTENSION
+NOTICE:  version "2.0" of extension "set_user" is already installed
+ALTER EXTENSION
+GRANT
+GRANT
+CREATE SCHEMA
+GRANT
+GRANT
+SET
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+GRANT
+GRANT
+CREATE VIEW
+REVOKE
+GRANT
+GRANT
+RESET
+2021-01-23 18:12:32,572 WARNING: Could not activate Linux watchdog device: "Can't open watchdog device: [Errno 2] No such file or directory: '/dev/watchdog'"
+2021-01-23 18:12:32,821 INFO: initialized a new cluster
+2021-01-23 18:12:43,080 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:12:43,134 INFO: no action.  i am the leader with the lock
+2021-01-23 18:12:43,735 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:12:43,882 INFO: no action.  i am the leader with the lock
+2021-01-23 18:12:54,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:12:54,350 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:04,244 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:04,357 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:14,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:14,295 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:24,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:24,301 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:28.286 - /scripts/postgres_backup.sh - I was called as: /scripts/postgres_backup.sh /home/postgres/pgdata/pgroot/data
+2021-01-23 18:13:29.298 45 LOG Starting pgqd 3.3
+2021-01-23 18:13:29.299 45 LOG auto-detecting dbs ...
+2021-01-23 18:13:34,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:34,372 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:44,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:44,296 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:54,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:13:54,300 INFO: no action.  i am the leader with the lock
+2021-01-23 18:13:59.327 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:14:04,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:04,369 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:14,251 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:14,303 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:24,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:24,296 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:29.332 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:14:34,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:34,359 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:44,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:44,299 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:54,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:14:54,351 INFO: no action.  i am the leader with the lock
+2021-01-23 18:14:59.361 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:15:04,255 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:04,309 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:14,243 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:14,293 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:24,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:24,295 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:29.364 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:15:34,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:34,295 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:44,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:44,296 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:54,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:15:54,291 INFO: no action.  i am the leader with the lock
+2021-01-23 18:15:59.393 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:16:04,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:04,299 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:14,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:14,295 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:24,244 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:24,319 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:29.406 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:16:34,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:34,310 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:44,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:44,292 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:54,240 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:16:54,291 INFO: no action.  i am the leader with the lock
+2021-01-23 18:16:59.428 45 LOG {ticks: 0, maint: 0, retry: 0}
+2021-01-23 18:17:04,241 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:17:04,295 INFO: no action.  i am the leader with the lock
+2021-01-23 18:17:14,242 INFO: Lock owner: acid-minimal-cluster-0; I am acid-minimal-cluster-0
+2021-01-23 18:17:14,302 INFO: no action.  i am the leader with the lock

@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: infrastructure
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Infrastructure project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: postgres-operator
+    server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
+  - namespace: auth
+    server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com  
+  - namespace: infrastructure
+    server: https://kubernetes.default.svc
+  - namespace: argocd
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
+  - group: ''
+    kind: CustomResourceDefinition
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange
+  - group: ''
+    kind: NetworkPolicy
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+

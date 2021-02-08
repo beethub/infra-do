@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: infrastructure
+  source:
+    repoURL: https://github.com/beethub/infra-do.git
+    targetRevision: HEAD
+    path: Helm/postgres-operator
+    helm:
+      valueFiles:
+      - values-crd.yaml
+  destination:
+    name: do-nyc3-k8s-beet-infra 
+    namespace: postgres-operator
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
