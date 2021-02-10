@@ -14,15 +14,21 @@ spec:
     server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
   - namespace: auth
     server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com  
+  - namespace: cert-manager
+    server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
   - namespace: infrastructure
     server: https://kubernetes.default.svc
   - namespace: argocd
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-  - group: ''
+  - group: '*'
     kind: Namespace
-  - group: ''
+  - group: '*'
     kind: CustomResourceDefinition
+  - group: '*'
+    kind: ClusterRole
+  - group: '*'
+    kind: ClusterRoleBinding
   namespaceResourceBlacklist:
   - group: ''
     kind: ResourceQuota

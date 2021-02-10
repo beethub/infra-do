@@ -1,22 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infrastructure
+  name: cert-manager
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: infrastructure
   source:
-    repoURL: https://github.com/beethub/infra-do.git
-    targetRevision: HEAD
-    path: infra/helm
+    chart: cert-manager
+    repoURL: hhttps://charts.jetstack.io
+    targetRevision: v1.1.0
+    helm:
+      values: |
+        installCRDs: true
   destination:
-    name: in-cluster
-    namespace: infrastructure
+    name: do-nyc3-k8s-beet-infra 
+    namespace: cert-manager
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
-    syncOptions:
-    - CreateNamespace=true

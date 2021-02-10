@@ -78,12 +78,3 @@ tolerations: []
 
 affinity: {}
 
-keycloak-db:
-  architecture: replication
-  auth:
-    replicationUser: keycloak-rep
-    database: keycloak
-    username: keycloak
-    existingSecret: keycloak-secret-db
-  global:
-    storageClass: do-block-storage
