@@ -9,7 +9,7 @@ spec:
   project: infrastructure
   source:
     chart: cert-manager
-    repoURL: hhttps://charts.jetstack.io
+    repoURL: https://charts.jetstack.io
     targetRevision: v1.1.0
     helm:
       values: |
