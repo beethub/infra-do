@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Infrastructure configuration
-name: infrastructure
-version: "1.0.0"

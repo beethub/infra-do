@@ -10,6 +10,8 @@ spec:
   sourceRepos:
   - '*'
   destinations:
+  - namespace: kube-system
+    server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
   - namespace: postgres-operator
     server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
   - namespace: auth
@@ -29,6 +31,10 @@ spec:
     kind: ClusterRole
   - group: '*'
     kind: ClusterRoleBinding
+  - group: admissionregistration.k8s.io
+    kind: MutatingWebhookConfiguration
+  - group: admissionregistration.k8s.io
+    kind: ValidatingWebhookConfiguration
   namespaceResourceBlacklist:
   - group: ''
     kind: ResourceQuota

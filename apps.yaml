@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/beethub/infra-do.git
     targetRevision: HEAD
-    path: infra/helm
+    path: infra
   destination:
     name: in-cluster
     namespace: infrastructure
