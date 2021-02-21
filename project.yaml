@@ -18,6 +18,8 @@ spec:
     server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com  
   - namespace: cert-manager
     server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
+  - namespace: istio-system
+    server: https://76d47a35-c5a2-4c29-b83d-652ace867d1c.k8s.ondigitalocean.com
   - namespace: infrastructure
     server: https://kubernetes.default.svc
   - namespace: argocd
