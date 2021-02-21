@@ -11,6 +11,10 @@ spec:
     path: manifests/charts/istio-control/istio-discovery
     repoURL: https://github.com/istio/istio.git
     targetRevision: HEAD
+  helm:
+    values: |
+      pilot:
+        resources: {}
   destination:
     namespace: istio-system
     name: do-nyc3-k8s-beet-infra
