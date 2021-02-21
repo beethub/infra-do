@@ -20,8 +20,8 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true
-#  ignoreDifferences:
-#  - group: admissionregistration.k8s.io
-#    kind: MutatingWebhookConfiguration
-#    jsonPointers:
-#    - /webhooks
+  ignoreDifferences:
+  - group: admissionregistration.k8s.io
+    kind: MutatingWebhookConfiguration
+    jsonPointers:
+    - /webhooks
