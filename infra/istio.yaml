@@ -14,7 +14,10 @@ spec:
     helm:
       values: |
         pilot:
-          resources: {}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
   destination:
     namespace: istio-system
     name: do-nyc3-k8s-beet-infra
